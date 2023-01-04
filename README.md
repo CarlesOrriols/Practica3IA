@@ -5,3 +5,5 @@ Pràctica feta al Quatrimestre de Tardor del curs 2022-2023 per:
 * [Neus Mayol](https://github.com/nmayol)
 * [Carles Orriols](https://github.com/CarlesOrriols)
 * [Pau Vilaró](https://github.com/pauvilarolozano)
+
+Link a la documentació: https://www.overleaf.com/3128352977mjsnqycrtvhm
