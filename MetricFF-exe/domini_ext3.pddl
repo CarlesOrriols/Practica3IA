@@ -42,14 +42,17 @@
         :precondition (and (enRover ?r ?p) (estacionado ?r ?as) (peticion ?p ?as))
         :effect (and (servido ?p) 
                 (enBase ?p ?as) (not(enRover ?r ?p)) (decrease (cantidad-personas ?r) 1)
-              ;  (= (suma-prioridades) (+ (suma-prioridades) (prioridad-peticion ?p ?as))) 
+                (increase (suma-prioridades) (prioridad-peticion ?p ?as))
                 )
     )
 
     (:action descargar_suministro
         :parameters (?r - rover ?al - almacen ?s - suministro)
         :precondition (and (enRover ?r ?s) (estacionado ?r ?al) (peticion ?s ?al))
-        :effect (and (servido ?s) (enBase ?s ?al) (not(enRover ?r ?s)) (decrease (cantidad-suministros ?r) 1))
+        :effect (and (servido ?s) 
+                (enBase ?s ?al) (not(enRover ?r ?s)) (decrease (cantidad-suministros ?r) 1)
+                (increase (suma-prioridades) (prioridad-peticion ?s ?al))
+        )
     )
 
     (:action mover_rover
