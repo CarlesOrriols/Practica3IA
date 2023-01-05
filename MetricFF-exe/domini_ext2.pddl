@@ -13,6 +13,7 @@
         (peticion ?rec - recursos ?b - base)
         (adjacente ?b1 - base ?b2 - base)
         (servido ?rec - recursos)
+    
     )
 
     (:functions
@@ -20,6 +21,7 @@
         (cantidad-suministros ?r - rover)
         (combustible-gastado ?r - rover)
         (capacidad-combustible)
+        (suma-combustible-gastado)
     )
 
     (:action cargar_persona
@@ -49,6 +51,7 @@
     (:action mover_rover
         :parameters (?r - rover ?bOri - base ?bDest - base)
         :precondition (and (estacionado ?r ?bOri) (adjacente ?bOri ?bDest) (> (- (capacidad-combustible) (combustible-gastado ?r)) 0))
-        :effect (and (estacionado ?r ?bDest) (not(estacionado ?r ?bOri)) (increase (combustible-gastado ?r) 1))
+        :effect (and (estacionado ?r ?bDest) (not(estacionado ?r ?bOri))
+                     (increase (combustible-gastado ?r) 1) (increase (suma-combustible-gastado) 1))
     )
 )

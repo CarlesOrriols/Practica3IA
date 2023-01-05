@@ -1,4 +1,4 @@
-(define (domain domini_ext2)
+(define (domain domini_ext3)
     (:requirements :adl :typing :fluents)
 
     (:types rover base recursos - object
@@ -22,6 +22,7 @@
         (prioridad-peticion ?r - recursos ?b - base)
         (capacidad-combustible)
         (suma-prioridades)
+        (suma-combustible-gastado)
 
     )
 
@@ -58,6 +59,7 @@
     (:action mover_rover
         :parameters (?r - rover ?bOri - base ?bDest - base)
         :precondition (and (estacionado ?r ?bOri) (adjacente ?bOri ?bDest) (> (- (capacidad-combustible) (combustible-gastado ?r)) 0))
-        :effect (and (estacionado ?r ?bDest) (not(estacionado ?r ?bOri)) (increase (combustible-gastado ?r) 1))
+        :effect (and (estacionado ?r ?bDest) (not(estacionado ?r ?bOri)) 
+                (increase (combustible-gastado ?r) 1) (increase (suma-combustible-gastado) 1))
     )
 )

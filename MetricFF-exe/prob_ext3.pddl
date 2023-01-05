@@ -14,6 +14,7 @@
 
         (= (capacidad-combustible) 15)
         (= (suma-prioridades) 0)
+        (= (suma-combustible-gastado) 0)
 
         (= (cantidad-personas r01) 0)
         (= (cantidad-suministros r01) 0)
@@ -54,5 +55,5 @@
 
     (:goal (forall (?rec - recursos) (servido ?rec)))
 
-    (:metric minimize(+(combustible-gastado r01) (combustible-gastado r02)))
+    (:metric maximize(suma-prioridades))
 )

@@ -1,7 +1,6 @@
 ;tiene en cuenta el combustible
-;en doc comparar con prob_ext2 ya que con mismo escenario aqui se realiza en menos pasos
-(define (problem prob_ext2_v2)
-    (:domain domini_ext2)
+(define (problem prob_ext3_v2)
+    (:domain domini_ext3)
         (:objects 
         r01 r02 - rover
         al01 al02 al03 al04 - almacen
@@ -13,6 +12,7 @@
     (:init
 
         (= (capacidad-combustible) 15)
+        (= (suma-prioridades) 0)
         (= (suma-combustible-gastado) 0)
 
         (= (cantidad-personas r01) 0)
@@ -39,11 +39,21 @@
         (peticion p01 as01) (peticion p02 as01) (peticion p03 as03) (peticion p01 as04)
         (enBase p01 as03) (enBase p02 as03) (enBase p03 as04) 
 
+        (= (prioridad-peticion p01 as01) 3)
+        (= (prioridad-peticion p02 as01) 2)
+        (= (prioridad-peticion p03 as03) 2)
+        (= (prioridad-peticion p01 as04) 1)
+
         (peticion s01 al01) (peticion s02 al02) (peticion s03 al03) (peticion s02 al04)
         (enBase s01 al04) (enBase s02 al03) (enBase s03 al01)
+        (= (prioridad-peticion s01 al01) 3)
+        (= (prioridad-peticion s02 al02) 2)
+        (= (prioridad-peticion s03 al03) 2)
+        (= (prioridad-peticion s02 al04) 1)
     )
 
     (:goal (forall (?rec - recursos) (servido ?rec)))
 
-    (:metric minimize(suma-combustible-gastado))
+    ;TODO: Combinar max suma de prioritats amb min combustible gastat
+    (:metric maximize(suma-prioridades))
 )

@@ -10,8 +10,8 @@
     )
 
     (:init
-
         (= (capacidad-combustible) 15)
+        (= (suma-combustible-gastado) 0)
 
         (= (cantidad-personas r01) 0)
         (= (cantidad-suministros r01) 0)
