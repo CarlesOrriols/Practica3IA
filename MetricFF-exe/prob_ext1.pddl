@@ -1,12 +1,11 @@
-;No troba solucio perk no estan disponibles tots els recursos de les peticions
-(define (problem prob_ext1)
+(define (problem prob_ext1_2)
     (:domain domini_ext1)
     (:objects 
         r01 r02 r03 - rover
         al01 al02 al03 al04 - almacen
         as01 as02 as03 as04 - asentamiento
-        p01 p02 p03 p04 - persona
-        s01 s02 s03 s04 - suministro
+        p01 p02 p03 - persona
+        s01 s02 s03 - suministro
     )
 
     (:init
@@ -29,13 +28,13 @@
         (adjacente as03 al03) (adjacente as03 al04)
         (adjacente as04 al01) (adjacente as04 al04)
 
-        (peticion p01 as01) (peticion p02 as01) (peticion p03 as03) (peticion p04 as04)
-        (disponible p01 as03) (disponible p02 as03) (disponible p03 as04) 
+        (peticion p01 as01) (peticion p02 as01) (peticion p03 as03) (peticion p01 as04)
+        (enBase p01 as03) (enBase p02 as03) (enBase p03 as04) 
 
-        (peticion s01 al01) (peticion s02 al02) (peticion s03 al03) (peticion s04 al04)
-        (disponible s01 al04) (disponible s02 al03) (disponible s03 al01)
+        (peticion s01 al01) (peticion s02 al02) (peticion s03 al03) (peticion s02 al04)
+        (enBase s01 al04) (enBase s02 al03) (enBase s03 al01)
     )
 
-    (:goal (forall (?rec - recursos ?b - base) (imply(peticion ?rec ?b) (servido ?rec))))
+    (:goal (forall (?rec - recursos) (servido ?rec)))
 
 )
