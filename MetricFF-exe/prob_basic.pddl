@@ -1,27 +1,37 @@
-;No troba solucio perk no estan disponibles tots els recursos de les peticions
 (define (problem prob_basic)
     (:domain domini_basic)
     (:objects 
-        r01 r02 - rover
-        b01 b02 b03 b04 b05 b06 b07 - base
-        rec01 rec02 rec03 rec04 - recursos
+        r01 r02 r03 - rover
+        al01 al02 al03 al04 al05 - almacen
+        as01 as02 as03 as04 - asentamiento
+        p01 p02 p03 - persona
+        s01 s02 s03 - suministro
     )
 
     (:init
-        (estacionado r01 b03) (estacionado r02 b06)
+        (estacionado r01 al05) (estacionado r02 as02)
 
-        (adjacente b01 b02) (adjacente b01 b03) (adjacente b01 b04)
-        (adjacente b01 b05) (adjacente b01 b06) (adjacente b01 b07)
-        (adjacente b02 b01) (adjacente b02 b03)
-        (adjacente b03 b01) (adjacente b03 b02) (adjacente b03 b04)
-        (adjacente b04 b01) (adjacente b04 b03)
-        (adjacente b05 b01) (adjacente b05 b06)
-        (adjacente b06 b01) (adjacente b06 b05) (adjacente b06 b07)
-        (adjacente b07 b01) (adjacente b07 b06)
+        ;mapa cuadrícula
+        (adyacente al01 as01) (adyacente al01 as04)
+        (adyacente al02 as01) (adyacente al02 as02)
+        (adyacente al03 as02) (adyacente al03 as03)
+        (adyacente al04 as04) (adyacente al04 as03)
+        (adyacente al05 as01) (adyacente al05 as02)
+        (adyacente al05 as03) (adyacente al05 as04)
 
-        (peticion rec01 b03) (peticion rec02 b01) (peticion rec03 b05) (peticion rec04 b06) 
-        (disponible rec01 b02) (disponible rec02 b04)
+        (adyacente as01 al01) (adyacente as01 al02)
+        (adyacente as02 al02) (adyacente as02 al03)
+        (adyacente as03 al03) (adyacente as03 al04)
+        (adyacente as04 al01) (adyacente as04 al04)
+        (adyacente as01 al05) (adyacente as02 al05)
+        (adyacente as03 al05) (adyacente as04 al05)
+
+        (peticion p01 as01) (peticion p02 as01) (peticion p03 as03) (peticion p01 as04)
+        (enBase p01 as03) (enBase p02 as03) (enBase p03 as04) 
+
+        (peticion s01 as01) (peticion s02 as02) (peticion s03 as03) (peticion s02 as04)
+        (enBase s01 al04) (enBase s02 al03) (enBase s03 al01)
     )
 
-    (:goal (forall (?rec - recursos ?b - base) (imply(peticion ?rec ?b) (servido ?rec))))
+    (:goal (forall (?rec - recursos) (servido ?rec)))
 )

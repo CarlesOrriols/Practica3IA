@@ -1,32 +1,59 @@
 (define (domain domini_basic)
     (:requirements :adl :typing)
 
-    (:types rover base recursos - object)
+    (:types rover base recursos - object
+            asentamiento almacen - base
+            persona suministro - recursos
+    )
 
     (:predicates
         (estacionado ?r - rover ?b - base); el rover esta estacionat a la base b
-        (disponible ?rec - recursos ?b - base); el recurs en questio esta disponible a la base b
+        (enBase ?rec - recursos ?b - base); el recurs en questio esta disponible a la base b
         (enRover ?r - rover ?rec - recursos); el recurs aquell es troba al rover
-        (peticion ?rec - recursos ?b - base); hi ha una peticio de rec recursos a la base
-        (adjacente ?b1 - base ?b2 - base); b1 i b2 son adjacents
+        (peticion ?rec - recursos ?as - asentamiento); hi ha una peticio de rec recursos a la base
+        (adyacente ?b1 - base ?b2 - base); b1 i b2 son adjacents
         (servido ?rec - recursos)
     )
 
-    (:action cargar_recurso
-        :parameters (?r - rover ?b - base ?rec - recursos)
-        :precondition (and (disponible ?rec ?b) (estacionado ?r ?b)) ; la base no te el recurs demanat disponible i el rover esta estacionat a la base
-        :effect (and (enRover ?r ?rec) (not(disponible ?rec ?b))) ; el recurs es passara al rover i la base no tindra el recurs agafat disponible
+    (:action cargar_persona
+        :parameters (?r - rover ?as - asentamiento ?p - persona)
+        :precondition (and (not(servido ?p)) (enBase ?p ?as) (estacionado ?r ?as))
+        :effect (and (enRover ?r ?p) (not(enBase ?p ?as)))
     )
 
-    (:action descargar_recurso
-        :parameters (?r - rover ?b - base ?rec - recursos)
-        :precondition (and (enRover ?r ?rec) (estacionado ?r ?b) (peticion ?rec ?b)) ; el rover té el recurs rec i esta estacionat a la base b, que te una peticio d'aquell recurs
-        :effect (and (servido ?rec) (not(enRover ?r ?rec))) ; el recurs ja no es al rover i es serveix a la base
+    (:action cargar_suministro
+        :parameters (?r - rover ?al - almacen ?s - suministro)
+        :precondition (and (not(servido ?s)) (enBase ?s ?al) (estacionado ?r ?al))
+        :effect (and (enRover ?r ?s) (not(enBase ?s ?al)))
+    )
+
+    (:action descargar_persona
+        :parameters (?r - rover ?as - asentamiento ?p - persona)
+        :precondition (and (enRover ?r ?p) (estacionado ?r ?as) (peticion ?p ?as) )
+        :effect (and (servido ?p) (not (peticion ?p ?as)) (enBase ?p ?as) (not(enRover ?r ?p)))
+    )
+
+    (:action descargar_suministro
+        :parameters (?r - rover ?as - asentamiento ?s - suministro)
+        :precondition (and (enRover ?r ?s) (estacionado ?r ?as) (peticion ?s ?as))
+        :effect (and (servido ?s) (not (peticion ?s ?as)) (enBase ?s ?as) (not(enRover ?r ?s)))
     )
     
     (:action mover_rover
         :parameters (?r - rover ?bOri - base ?bDest - base)
-        :precondition (and (estacionado ?r ?bOri) (adjacente ?bOri ?bDest)) ; el rover esta estacionat a la baseOri i la baseDest es adjacent
+        :precondition (and (estacionado ?r ?bOri) (adyacente ?bOri ?bDest)) ; el rover esta estacionat a la baseOri i la baseDest es adjacent
         :effect (and (estacionado ?r ?bDest) (not(estacionado ?r ?bOri))) ; el rover NO esta estacionat a l'origen i ho està a la baseDest
-    ) 
+    )
+
+    (:action se_queda	; (recurs) es necessita a la base i... es queda!
+	  :parameters (?rec - recursos ?as - asentamiento)
+	  :precondition (and
+			(enBase ?rec ?as)
+			(peticion ?rec ?as)
+		)
+	  :effect (and
+			(not (peticion ?rec ?as))
+			(servido ?rec)
+		)
+	) 
 )
