@@ -10,7 +10,7 @@
         (estacionado ?r - rover ?b - base)
         (enBase ?rec - recursos ?b - base)
         (enRover ?r - rover ?rec - recursos)
-        (peticion ?rec - recursos ?b - base)
+        (peticion ?rec - recursos ?as - asentamiento)
         (adjacente ?b1 - base ?b2 - base)
         (servido ?rec - recursos)
     )
@@ -43,7 +43,7 @@
         :precondition (and (enRover ?r ?p) (estacionado ?r ?as) (peticion ?p ?as))
         :effect (and (servido ?p)
                 (enBase ?p ?as) (not(enRover ?r ?p)) (decrease (cantidad-personas ?r) 1)
-                (increase (suma-prioridades) (prioridad-peticion ?p ?as))
+                (decrease (suma-prioridades) (- 3 (prioridad-peticion ?s ?as)))
                 )
     )
 
@@ -52,7 +52,7 @@
         :precondition (and (enRover ?r ?s) (estacionado ?r ?as) (peticion ?s ?as))
         :effect (and (servido ?s)
                 (enBase ?s ?as) (not(enRover ?r ?s)) (decrease (cantidad-suministros ?r) 1)
-                (increase (suma-prioridades) (prioridad-peticion ?s ?as))
+                (decrease (suma-prioridades) (- 3 (prioridad-peticion ?s ?as)))
         )
     )
 
