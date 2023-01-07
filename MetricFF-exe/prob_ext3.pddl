@@ -46,15 +46,16 @@
         ; (= (prioridad-peticion p03 as03) 2)
         ; (= (prioridad-peticion p01 as04) 1)
 
-        (peticion s01 as01) (peticion s01 as02) ;(peticion s01 as03) ;(peticion s01 as04)
+        (peticion s01 as01) (peticion s01 as02) (peticion s01 as03) ;(peticion s01 as04)
         (enBase s01 al04) ;(enBase s02 al03) (enBase s03 al01)
         (= (prioridad-peticion s01 as01) 3)
-        (= (prioridad-peticion s01 as02) 2)
-        ;(= (prioridad-peticion s01 as03) 1)
+        (= (prioridad-peticion s01 as02) 1)
+        (= (prioridad-peticion s01 as03) 2)
         ; (= (prioridad-peticion s01 as04) 1)
     )
 
     (:goal (forall (?rec - recursos) (servido ?rec)))
 
     (:metric maximize(suma-prioridades))
+    ;(:metric maximize(+ (suma-prioridades) (suma-combustible-no-gastado)))
 )
