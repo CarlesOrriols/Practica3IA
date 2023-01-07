@@ -22,7 +22,7 @@
         (prioridad-peticion ?r - recursos ?b - base)
         (capacidad-combustible)
         (suma-prioridades)
-        (suma-combustible-gastado)
+        (suma-combustible-no-gastado)
 
     )
 
@@ -48,11 +48,11 @@
     )
 
     (:action descargar_suministro
-        :parameters (?r - rover ?al - almacen ?s - suministro)
-        :precondition (and (enRover ?r ?s) (estacionado ?r ?al) (peticion ?s ?al))
+        :parameters (?r - rover ?as - asentamiento ?s - suministro)
+        :precondition (and (enRover ?r ?s) (estacionado ?r ?as) (peticion ?s ?as))
         :effect (and (servido ?s)
-                (enBase ?s ?al) (not(enRover ?r ?s)) (decrease (cantidad-suministros ?r) 1)
-                (increase (suma-prioridades) (prioridad-peticion ?s ?al))
+                (enBase ?s ?as) (not(enRover ?r ?s)) (decrease (cantidad-suministros ?r) 1)
+                (increase (suma-prioridades) (prioridad-peticion ?s ?as))
         )
     )
 
@@ -60,6 +60,6 @@
         :parameters (?r - rover ?bOri - base ?bDest - base)
         :precondition (and (estacionado ?r ?bOri) (adjacente ?bOri ?bDest) (> (- (capacidad-combustible) (combustible-gastado ?r)) 0))
         :effect (and (estacionado ?r ?bDest) (not(estacionado ?r ?bOri))
-                (increase (combustible-gastado ?r) 1) (increase (suma-combustible-gastado) 1))
+                (increase (combustible-gastado ?r) 1) (decrease (suma-combustible-no-gastado) 1))
     )
 )

@@ -13,7 +13,7 @@
 
         (= (capacidad-combustible) 15)
         (= (suma-prioridades) 0)
-        (= (suma-combustible-gastado) 0)
+        (= (suma-combustible-no-gastado) (* 2 (capacidad-combustible)))
 
         (= (cantidad-personas r01) 0)
         (= (cantidad-suministros r01) 0)
@@ -55,5 +55,5 @@
     (:goal (forall (?rec - recursos) (servido ?rec)))
 
     ;TODO: Combinar max suma de prioritats amb min combustible gastat
-    (:metric maximize(suma-prioridades))
+    (:metric maximize(+ (suma-prioridades) (suma-combustible-no-gastado)))
 )
