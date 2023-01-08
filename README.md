@@ -12,6 +12,6 @@ Per executar el programa de Python s'ha de fer:
 ```
 python punt-extra-1.py [nom-fitxer-problema] [nom-fitxer-domini]
 ```
-En cas de no posar aquests últims paràmetres, fa servir els següents: "prob_punt_extra_1.pddl" "domini_ext2.pddl"
+En cas de no posar aquests últims paràmetres, fa servir els següents: "prob_punt_extra_1" "domini_ext3"
 
 ATENCIÓ: El fitxer del problema serà sobreescrit i es perdrà el que hi ha en ell.
