@@ -15,19 +15,22 @@ def main():
     else:
         domain_file = "domini_ext3"
 
+    maxim_seg_iteracio = 150
+    que_incrementa = "rovers"
     # maxim_seg_iteracio = 4, que_incrementa = "rovers/peticions/recursos"
-    problemes_incrementals(50, "peticions", problem_file, domain_file)
+    problemes_incrementals(maxim_seg_iteracio, que_incrementa, problem_file, domain_file)
 
 def problemes_incrementals(maxim_seg_iteracio, que_incrementa, problem_file, domain_file):
     num_rovers=2
-    num_persones=4
-    num_subministres=4
+    num_persones=2
+    num_subministres=2
     gasolina_inici=50
-    num_peticions_persones=2
-    num_peticions_subministres=2
+    num_peticions_persones=4
+    num_peticions_subministres=4
 
     temps_sobrepassat = False
-    text_resum = "\n\nAnalitzant que passa amb incrementar " + que_incrementa + "\n"
+    # text_resum = "\n\nAnalitzant que passa amb incrementar " + que_incrementa + "\n"
+    print("\n\nAnalitzant que passa amb incrementar " + que_incrementa + "\n")
     limit_iteracions = 10
     ites = 0
     while not temps_sobrepassat:
@@ -39,21 +42,24 @@ def problemes_incrementals(maxim_seg_iteracio, que_incrementa, problem_file, dom
         temps_total = end - start
 
         if que_incrementa == "rovers":
-            text_resum += "\tPer " + str(num_rovers) + " rovers ha tardat " + str(temps_total) + "segons.\n"
+            # text_resum += "\tPer " + str(num_rovers) + " rovers ha tardat " + str(temps_total) + "segons.\n"
+            print("\tPer " + str(num_rovers) + " rovers ha tardat " + str(temps_total) + " segons.\n")
             num_rovers += 1
         elif que_incrementa == "peticions":
-            text_resum += "\tPer " + str(num_peticions_persones) + " peticions de persones i " + str(num_peticions_subministres) + " peticions de subministres ha tardat " + str(temps_total) + "segons.\n"
+            # text_resum += "\tPer " + str(num_peticions_persones) + " peticions de persones i " + str(num_peticions_subministres) + " peticions de subministres ha tardat " + str(temps_total) + "segons.\n"
+            print("\tPer " + str(num_peticions_persones) + " peticions de persones i " + str(num_peticions_subministres) + " peticions de subministres ha tardat " + str(temps_total) + " segons.\n")
             num_peticions_persones += 1
             num_peticions_subministres += 1
         elif que_incrementa == "recursos":
-            text_resum += "\tPer " + str(num_persones) + " persones i " + str(num_subministres) + " subministres ha tardat " + str(temps_total) + "segons.\n"
+            # text_resum += "\tPer " + str(num_persones) + " persones i " + str(num_subministres) + " subministres ha tardat " + str(temps_total) + "segons.\n"
+            print("\tPer " + str(num_persones) + " persones i " + str(num_subministres) + " subministres ha tardat " + str(temps_total) + " segons.\n")
             num_persones += 1
             num_subministres += 1
 
         ites += 1
         if (limit_iteracions < ites) or temps_total >= maxim_seg_iteracio:
             temps_sobrepassat = True
-    print(text_resum)
+    # print(text_resum)
 
 
 def escriureProblema(problem_file, domain_file, num_rovers, num_persones, num_subministres, gasolina_inici, num_peticions_persones, num_peticions_subministres):
@@ -120,6 +126,8 @@ def printar_grafo_adyacencias_constante(f):
     f.write("\t\t;MATRIU D ADJACENCIES\n")
     f.write("\t\t(adyacente as8 as1) (adyacente as1 as8)\n")
     f.write("\t\t(adyacente al4 al2) (adyacente al2 al4)\n")
+    f.write("\t\t(adyacente as9 as6) (adyacente as6 as9)\n")
+    f.write("\t\t(adyacente al1 as4) (adyacente as4 al1)\n")
 
     f.write("\t\t(adyacente al1 as1) (adyacente as1 al1)\n")
     f.write("\t\t(adyacente as1 as2) (adyacente as2 as1)\n")
