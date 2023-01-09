@@ -10,8 +10,7 @@ Link a la documentació: https://www.overleaf.com/3128352977mjsnqycrtvhm
 
 Per executar el programa de Python s'ha de fer:
 ```
-python punt-extra-1.py [nom-fitxer-problema] [nom-fitxer-domini]
+python punt-extra-1.py [seed-random] [variable_incremental]
 ```
-En cas de no posar aquests últims paràmetres, fa servir els següents: "prob_punt_extra_1" "domini_ext3"
-
-ATENCIÓ: El fitxer del problema serà sobreescrit i es perdrà el que hi ha en ell.
+La variable incremental pot prendre els següents valors: rover, recursos o peticions.
+Les sortides es fan totes als fitxers que hi ha a la carpeta outputs.
