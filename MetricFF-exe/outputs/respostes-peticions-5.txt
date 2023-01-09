@@ -1,0 +1,55 @@
+
+ff: parsing domain file
+domain 'DOMINI_EXT3' defined
+ ... done.
+ff: parsing problem file
+problem 'PROB_EXT3_PUNT_EXTRA_PETICIONS_5' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+advancing to distance:   11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
+step    0: MOVER_ROVER R1 AL4 AS6
+        1: CARGAR_SUMINISTRO R2 AL1 S2
+        2: SE_QUEDA P1 AS8
+        3: MOVER_ROVER R2 AL1 AS1
+        4: DESCARGAR_SUMINISTRO R2 AS1 S2
+        5: MOVER_ROVER R2 AS1 AL1
+        6: CARGAR_SUMINISTRO R2 AL1 S1
+        7: MOVER_ROVER R2 AL1 AS10
+        8: DESCARGAR_SUMINISTRO R2 AS10 S1
+        9: MOVER_ROVER R2 AS10 AS9
+       10: CARGAR_PERSONA R2 AS9 P2
+       11: MOVER_ROVER R2 AS9 AS6
+       12: MOVER_ROVER R2 AS6 AS5
+       13: DESCARGAR_PERSONA R2 AS5 P2
+     
+
+time spent:    0.00 seconds instantiating 256 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 85 facts and 154 actions
+               0.00 seconds creating final representation with 85 relevant facts, 16 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.00 seconds searching, evaluating 221 states, to a max depth of 0
+               0.00 seconds total time
+

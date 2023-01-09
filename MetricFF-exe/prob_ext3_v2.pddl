@@ -1,8 +1,8 @@
 ;tiene en cuenta el combustible
 (define (problem prob_ext3_v2)
     (:domain domini_ext3)
-        (:objects 
-        r01 r02 - rover
+        (:objects
+        r01 r02 r03 r04 - rover
         al01 al02 al03 al04 al05 - almacen
         as01 as02 as03 as04 - asentamiento
         p01 p02 p03 - persona
@@ -23,7 +23,7 @@
         (= (cantidad-suministros r02) 0)
         (= (combustible-gastado r02) 0)
 
-        (estacionado r01 as01) (estacionado r02 as04)
+        (estacionado r01 as01) (estacionado r02 as04) (estacionado r03 al01) (estacionado r04 al03)
 
         ;mapa cuadrícula
         (adyacente al01 as01) (adyacente al01 as04)
@@ -41,7 +41,7 @@
         (adyacente as03 al05) (adyacente as04 al05)
 
         (peticion p01 as01) (peticion p02 as01) (peticion p03 as03) (peticion p01 as04)
-        (enBase p01 as03) (enBase p02 as03) (enBase p03 as04) 
+        (enBase p01 as03) (enBase p02 as03) (enBase p03 as04)
 
         (= (prioridad-peticion p01 as01) 3)
         (= (prioridad-peticion p02 as01) 2)

@@ -1,0 +1,172 @@
+
+ff: parsing domain file
+domain 'DOMINI_EXT3' defined
+ ... done.
+ff: parsing problem file
+problem 'PROB_EXT3_V2_RANDOM' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+advancing to distance:   51
+                         50
+                         49
+                         48
+                         47
+                         46
+                         45
+                         44
+                         43
+                         42
+                         41
+                         40
+                         38
+                         37
+                         36
+                         35
+                         34
+                         33
+                         31
+                         30
+                         29
+                         28
+                         27
+                         26
+                         25
+                         24
+                         23
+                         22
+                         21
+                         20
+                         19
+                         18
+                         16
+                         15
+                         14
+                         13
+                         12
+                         11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
+step    0: CARGAR_SUMINISTRO R1 AL2 S7
+        1: MOVER_ROVER R1 AL2 AS2
+        2: CARGAR_PERSONA R2 AS8 P6
+        3: MOVER_ROVER R2 AS8 AS1
+        4: DESCARGAR_PERSONA R2 AS1 P6
+        5: MOVER_ROVER R2 AS1 AL1
+        6: CARGAR_SUMINISTRO R2 AL1 S2
+        7: SE_QUEDA P1 AS9
+        8: MOVER_ROVER R2 AL1 AS1
+        9: DESCARGAR_SUMINISTRO R2 AS1 S2
+       10: MOVER_ROVER R2 AS1 AS8
+       11: DESCARGAR_SUMINISTRO R1 AS2 S7
+       12: MOVER_ROVER R1 AS2 AL2
+       13: CARGAR_SUMINISTRO R1 AL2 S4
+       14: MOVER_ROVER R1 AL2 AS2
+       15: MOVER_ROVER R2 AS8 AL5
+       16: MOVER_ROVER R1 AS2 AS1
+       17: DESCARGAR_SUMINISTRO R1 AS1 S4
+       18: MOVER_ROVER R1 AS1 AS2
+       19: CARGAR_SUMINISTRO R2 AL5 S3
+       20: MOVER_ROVER R2 AL5 AS8
+       21: MOVER_ROVER R2 AS8 AS1
+       22: DESCARGAR_SUMINISTRO R2 AS1 S3
+       23: MOVER_ROVER R2 AS1 AS8
+       24: MOVER_ROVER R2 AS8 AL5
+       25: MOVER_ROVER R2 AL5 AS9
+       26: CARGAR_PERSONA R2 AS9 P3
+       27: MOVER_ROVER R2 AS9 AL5
+       28: MOVER_ROVER R2 AL5 AS8
+       29: DESCARGAR_PERSONA R2 AS8 P3
+       30: MOVER_ROVER R2 AS8 AL5
+       31: MOVER_ROVER R2 AL5 AS9
+       32: MOVER_ROVER R2 AS9 AS10
+       33: MOVER_ROVER R1 AS2 AL2
+       34: CARGAR_PERSONA R2 AS10 P2
+       35: CARGAR_PERSONA R2 AS10 P7
+       36: MOVER_ROVER R2 AS10 AS9
+       37: MOVER_ROVER R1 AL2 AS3
+       38: DESCARGAR_PERSONA R2 AS9 P2
+       39: MOVER_ROVER R1 AS3 AS4
+       40: MOVER_ROVER R2 AS9 AS6
+       41: MOVER_ROVER R1 AS4 AL3
+       42: MOVER_ROVER R2 AS6 AL4
+       43: CARGAR_SUMINISTRO R1 AL3 S5
+       44: MOVER_ROVER R1 AL3 AS4
+       45: MOVER_ROVER R1 AS4 AL1
+       46: MOVER_ROVER R2 AL4 AS6
+       47: MOVER_ROVER R1 AL1 AS1
+       48: DESCARGAR_SUMINISTRO R1 AS1 S5
+       49: MOVER_ROVER R1 AS1 AL1
+       50: MOVER_ROVER R1 AL1 AS4
+       51: CARGAR_PERSONA R1 AS4 P9
+       52: MOVER_ROVER R1 AS4 AL1
+       53: MOVER_ROVER R1 AL1 AS1
+       54: MOVER_ROVER R1 AS1 AS2
+       55: DESCARGAR_PERSONA R1 AS2 P9
+       56: CARGAR_PERSONA R2 AS6 P10
+       57: MOVER_ROVER R2 AS6 AS5
+       58: DESCARGAR_PERSONA R2 AS5 P10
+       59: CARGAR_PERSONA R2 AS5 P4
+       60: MOVER_ROVER R2 AS5 AS6
+       61: MOVER_ROVER R2 AS6 AL4
+       62: MOVER_ROVER R2 AL4 AL2
+       63: MOVER_ROVER R2 AL2 AS2
+       64: DESCARGAR_PERSONA R2 AS2 P4
+       65: MOVER_ROVER R2 AS2 AL2
+       66: MOVER_ROVER R2 AL2 AL4
+       67: MOVER_ROVER R2 AL4 AS6
+       68: CARGAR_PERSONA R2 AS6 P8
+       69: MOVER_ROVER R2 AS6 AS9
+       70: DESCARGAR_PERSONA R2 AS9 P8
+       71: MOVER_ROVER R2 AS9 AS6
+       72: MOVER_ROVER R2 AS6 AL4
+       73: MOVER_ROVER R2 AL4 AS7
+       74: DESCARGAR_PERSONA R2 AS7 P7
+       75: CARGAR_PERSONA R2 AS7 P5
+       76: MOVER_ROVER R2 AS7 AL4
+       77: MOVER_ROVER R2 AL4 AS6
+       78: DESCARGAR_PERSONA R2 AS6 P5
+       79: MOVER_ROVER R2 AS6 AL4
+       80: CARGAR_SUMINISTRO R2 AL4 S8
+       81: MOVER_ROVER R2 AL4 AS6
+       82: DESCARGAR_SUMINISTRO R2 AS6 S8
+       83: MOVER_ROVER R2 AS6 AL4
+       84: CARGAR_SUMINISTRO R2 AL4 S1
+       85: MOVER_ROVER R2 AL4 AL2
+       86: MOVER_ROVER R2 AL2 AS2
+       87: MOVER_ROVER R1 AS2 AL2
+       88: MOVER_ROVER R1 AL2 AL4
+       89: CARGAR_SUMINISTRO R1 AL4 S6
+       90: MOVER_ROVER R1 AL4 AL2
+       91: MOVER_ROVER R1 AL2 AS2
+       92: DESCARGAR_SUMINISTRO R1 AS2 S6
+       93: DESCARGAR_SUMINISTRO R2 AS2 S1
+     
+
+time spent:    0.00 seconds instantiating 896 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 173 facts and 221 actions
+               0.00 seconds creating final representation with 173 relevant facts, 16 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.62 seconds searching, evaluating 14172 states, to a max depth of 0
+               0.62 seconds total time
+

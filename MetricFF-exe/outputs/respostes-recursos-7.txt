@@ -1,0 +1,41 @@
+
+ff: parsing domain file
+domain 'DOMINI_EXT3' defined
+ ... done.
+ff: parsing problem file
+problem 'PROB_EXT3_PUNT_EXTRA_RECURSOS_7' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+advancing to distance:   55
+                         51
+                         49
+                         48
+                         47
+                         46
+                         45
+                         44
+                         43
+                         42
+                         41
+                         40
+                         39
+                         38
+                         37
+                         36
+                         35
+                         34
+                         33
+                         32
+                         31
+                         30
+                         29
+                         28
+                         27

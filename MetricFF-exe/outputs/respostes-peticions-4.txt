@@ -1,0 +1,61 @@
+
+ff: parsing domain file
+domain 'DOMINI_EXT3' defined
+ ... done.
+ff: parsing problem file
+problem 'PROB_EXT3_PUNT_EXTRA_PETICIONS_4' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+advancing to distance:   14
+                         12
+                         11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
+step    0: MOVER_ROVER R2 AL1 AS10
+        1: MOVER_ROVER R1 AS1 AL1
+        2: CARGAR_SUMINISTRO R1 AL1 S2
+        3: SE_QUEDA P2 AS3
+        4: MOVER_ROVER R2 AS10 AS9
+        5: MOVER_ROVER R1 AL1 AS4
+        6: DESCARGAR_SUMINISTRO R1 AS4 S2
+        7: MOVER_ROVER R2 AS9 AS6
+        8: MOVER_ROVER R2 AS6 AL4
+        9: CARGAR_SUMINISTRO R2 AL4 S1
+       10: MOVER_ROVER R2 AL4 AS7
+       11: DESCARGAR_SUMINISTRO R2 AS7 S1
+       12: MOVER_ROVER R1 AS4 AL3
+       13: MOVER_ROVER R1 AL3 AS5
+       14: CARGAR_PERSONA R1 AS5 P1
+       15: MOVER_ROVER R1 AS5 AL3
+       16: MOVER_ROVER R1 AL3 AS4
+       17: DESCARGAR_PERSONA R1 AS4 P1
+     
+
+time spent:    0.00 seconds instantiating 256 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 81 facts and 146 actions
+               0.00 seconds creating final representation with 81 relevant facts, 16 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.00 seconds searching, evaluating 125 states, to a max depth of 0
+               0.00 seconds total time
+

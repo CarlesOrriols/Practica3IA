@@ -1,0 +1,88 @@
+
+ff: parsing domain file
+domain 'DOMINI_EXT3' defined
+ ... done.
+ff: parsing problem file
+problem 'PROB_EXT3_V2' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+advancing to distance:   21
+                         18
+                         17
+                         16
+                         15
+                         14
+                         13
+                         12
+                         11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
+step    0: MOVER_ROVER R01 AS01 AL02
+        1: MOVER_ROVER R01 AL02 AS02
+        2: MOVER_ROVER R01 AS02 AL03
+        3: CARGAR_SUMINISTRO R01 AL03 S02
+        4: MOVER_ROVER R01 AL03 AS02
+        5: DESCARGAR_SUMINISTRO R01 AS02 S02
+        6: MOVER_ROVER R01 AS02 AL02
+        7: MOVER_ROVER R01 AL02 AS01
+        8: CARGAR_PERSONA R02 AS04 P03
+        9: MOVER_ROVER R02 AS04 AL01
+       10: MOVER_ROVER R02 AL01 AS01
+       11: MOVER_ROVER R01 AS01 AL01
+       12: CARGAR_SUMINISTRO R01 AL01 S03
+       13: MOVER_ROVER R01 AL01 AS04
+       14: MOVER_ROVER R01 AS04 AL04
+       15: MOVER_ROVER R02 AS01 AL05
+       16: MOVER_ROVER R02 AL05 AS03
+       17: DESCARGAR_PERSONA R02 AS03 P03
+       18: MOVER_ROVER R02 AS03 AL04
+       19: MOVER_ROVER R01 AL04 AS03
+       20: MOVER_ROVER R02 AL04 AS04
+       21: DESCARGAR_SUMINISTRO R01 AS03 S03
+       22: MOVER_ROVER R02 AS04 AL01
+       23: MOVER_ROVER R02 AL01 AS01
+       24: MOVER_ROVER R02 AS01 AL02
+       25: CARGAR_PERSONA R01 AS03 P01
+       26: CARGAR_PERSONA R01 AS03 P02
+       27: MOVER_ROVER R01 AS03 AL05
+       28: MOVER_ROVER R01 AL05 AS01
+       29: DESCARGAR_PERSONA R01 AS01 P02
+       30: DESCARGAR_PERSONA R01 AS01 P01
+       31: MOVER_ROVER R01 AS01 AL05
+       32: MOVER_ROVER R01 AL05 AS04
+       33: MOVER_ROVER R01 AS04 AL04
+       34: CARGAR_SUMINISTRO R01 AL04 S01
+       35: MOVER_ROVER R01 AL04 AS03
+       36: MOVER_ROVER R01 AS03 AL05
+       37: MOVER_ROVER R01 AL05 AS01
+       38: DESCARGAR_SUMINISTRO R01 AS01 S01
+     
+
+time spent:    0.00 seconds instantiating 324 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 94 facts and 92 actions
+               0.00 seconds creating final representation with 94 relevant facts, 16 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.06 seconds searching, evaluating 3040 states, to a max depth of 0
+               0.06 seconds total time
+

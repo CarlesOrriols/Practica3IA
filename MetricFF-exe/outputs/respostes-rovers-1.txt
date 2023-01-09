@@ -1,0 +1,65 @@
+
+ff: parsing domain file
+domain 'DOMINI_EXT3' defined
+ ... done.
+ff: parsing problem file
+problem 'PROB_EXT3_PUNT_EXTRA_ROVERS_1' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((1.00*[RF20](MINUS-SUMA-PRIORIDADES)2.00*[RF21](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((1.00*[RF20](MINUS-SUMA-PRIORIDADES)2.00*[RF21](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+advancing to distance:   16
+                         14
+                         13
+                         12
+                         11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
+step    0: CARGAR_PERSONA R1 AS8 P1
+        1: CARGAR_SUMINISTRO R2 AL3 S1
+        2: MOVER_ROVER R2 AL3 AS4
+        3: CARGAR_SUMINISTRO R3 AL2 S2
+        4: MOVER_ROVER R3 AL2 AS3
+        5: MOVER_ROVER R1 AS8 AS1
+        6: MOVER_ROVER R1 AS1 AS2
+        7: DESCARGAR_SUMINISTRO R3 AS3 S2
+        8: MOVER_ROVER R1 AS2 AL2
+        9: MOVER_ROVER R1 AL2 AS3
+       10: MOVER_ROVER R3 AS3 AL2
+       11: MOVER_ROVER R3 AL2 AL4
+       12: MOVER_ROVER R3 AL4 AS7
+       13: CARGAR_PERSONA R3 AS7 P2
+       14: MOVER_ROVER R3 AS7 AS8
+       15: MOVER_ROVER R3 AS8 AS1
+       16: MOVER_ROVER R3 AS1 AS2
+       17: DESCARGAR_PERSONA R3 AS2 P2
+       18: DESCARGAR_PERSONA R1 AS3 P1
+       19: DESCARGAR_SUMINISTRO R2 AS4 S1
+     
+
+time spent:    0.00 seconds instantiating 364 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 85 facts and 170 actions
+               0.00 seconds creating final representation with 85 relevant facts, 22 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.00 seconds searching, evaluating 368 states, to a max depth of 0
+               0.00 seconds total time
+

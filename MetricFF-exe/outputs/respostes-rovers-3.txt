@@ -1,0 +1,63 @@
+
+ff: parsing domain file
+domain 'DOMINI_EXT3' defined
+ ... done.
+ff: parsing problem file
+problem 'PROB_EXT3_PUNT_EXTRA_ROVERS_3' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((1.00*[RF32](MINUS-SUMA-PRIORIDADES)2.00*[RF33](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((1.00*[RF32](MINUS-SUMA-PRIORIDADES)2.00*[RF33](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+advancing to distance:   16
+                         14
+                         13
+                         12
+                         11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
+step    0: MOVER_ROVER R1 AS10 AL1
+        1: MOVER_ROVER R1 AL1 AS4
+        2: MOVER_ROVER R2 AS8 AS1
+        3: SE_QUEDA P1 AS9
+        4: MOVER_ROVER R1 AS4 AL3
+        5: CARGAR_SUMINISTRO R1 AL3 S1
+        6: MOVER_ROVER R1 AL3 AS4
+        7: CARGAR_PERSONA R2 AS1 P2
+        8: DESCARGAR_SUMINISTRO R1 AS4 S1
+        9: MOVER_ROVER R2 AS1 AS8
+       10: DESCARGAR_PERSONA R2 AS8 P2
+       11: CARGAR_SUMINISTRO R5 AL5 S2
+       12: MOVER_ROVER R5 AL5 AS9
+       13: MOVER_ROVER R5 AS9 AS6
+       14: MOVER_ROVER R5 AS6 AL4
+       15: MOVER_ROVER R5 AL4 AL2
+       16: MOVER_ROVER R5 AL2 AS3
+       17: DESCARGAR_SUMINISTRO R5 AS3 S2
+     
+
+time spent:    0.00 seconds instantiating 580 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 122 facts and 273 actions
+               0.00 seconds creating final representation with 122 relevant facts, 34 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.19 seconds searching, evaluating 4458 states, to a max depth of 0
+               0.19 seconds total time
+

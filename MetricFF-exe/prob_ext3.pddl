@@ -1,7 +1,7 @@
 ;NO tiene en cuenta el combustible solo prioridades
 (define (problem prob_ext3)
     (:domain domini_ext3)
-        (:objects 
+        (:objects
         r01 r02 - rover
         al01 al02 al03 al04 al05 - almacen
         as01 as02 as03 as04 - asentamiento
@@ -41,7 +41,7 @@
         (adyacente as03 al05) (adyacente as04 al05)
 
         (peticion p01 as01) (peticion p02 as01) (peticion p03 as03) (peticion p01 as04)
-        (enBase p01 as03) (enBase p02 as03) (enBase p03 as04) 
+        (enBase p01 as03) (enBase p02 as03) (enBase p03 as04)
 
         (= (prioridad-peticion p01 as01) 3)
         (= (prioridad-peticion p02 as01) 2)
@@ -59,5 +59,4 @@
     (:goal (forall (?rec - recursos) (servido ?rec)))
 
     (:metric maximize(suma-prioridades))
-    ;(:metric maximize(+ (suma-prioridades) (suma-combustible-no-gastado)))
 )

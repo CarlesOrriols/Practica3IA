@@ -4,23 +4,14 @@ import random
 import time
 
 def main():
-    if (len(sys.argv)>2):
-        problem_file = sys.argv[2]
-    else:
-        problem_file = "prob_ext3_punt_extra"
-
-
-    if (len(sys.argv)>1):
-        domain_file = sys.argv[1]
-    else:
-        domain_file = "domini_ext3"
-
-    maxim_seg_iteracio = 150
-    que_incrementa = "rovers"
+    random.seed(int(sys.argv[1]))
+    maxim_seg_iteracio = 300
+    que_incrementa = sys.argv[2]
+    domain_file = "domini_ext3"
     # maxim_seg_iteracio = 4, que_incrementa = "rovers/peticions/recursos"
-    problemes_incrementals(maxim_seg_iteracio, que_incrementa, problem_file, domain_file)
+    problemes_incrementals(maxim_seg_iteracio, que_incrementa, domain_file)
 
-def problemes_incrementals(maxim_seg_iteracio, que_incrementa, problem_file, domain_file):
+def problemes_incrementals(maxim_seg_iteracio, que_incrementa, domain_file):
     num_rovers=2
     num_persones=2
     num_subministres=2
@@ -30,14 +21,15 @@ def problemes_incrementals(maxim_seg_iteracio, que_incrementa, problem_file, dom
 
     temps_sobrepassat = False
     # text_resum = "\n\nAnalitzant que passa amb incrementar " + que_incrementa + "\n"
-    print("\n\nAnalitzant que passa amb incrementar " + que_incrementa + "\n")
+    print("\n\nAnalitzant que passa amb incrementar " + que_incrementa + " (si en una iteracio esta mes de " + str(maxim_seg_iteracio) + " segons s'atura)\n")
     limit_iteracions = 10
     ites = 0
     while not temps_sobrepassat:
+        problem_file = "prob_ext3_punt_extra_" + que_incrementa + "_" + str(ites)
         escriureProblema(problem_file, domain_file, num_rovers, num_persones, num_subministres, gasolina_inici, num_peticions_persones, num_peticions_subministres)
 
         start = time.time()
-        os.system("timeout " + str(maxim_seg_iteracio) + "s ff -o " + domain_file + ".pddl -f " + problem_file + ".pddl -O > outputs/respostes-" + que_incrementa + "-" + str(ites) + ".txt" )
+        os.system("timeout " + str(maxim_seg_iteracio) + "s ff -o " + domain_file + ".pddl -f ./outputs/" + problem_file + ".pddl -O > outputs/respostes-" + que_incrementa + "-" + str(ites) + ".txt" )
         end = time.time()
         temps_total = end - start
 
@@ -57,14 +49,14 @@ def problemes_incrementals(maxim_seg_iteracio, que_incrementa, problem_file, dom
             num_subministres += 1
 
         ites += 1
-        if (limit_iteracions < ites) or temps_total >= maxim_seg_iteracio:
+        if (limit_iteracions <= ites) or temps_total >= maxim_seg_iteracio:
             temps_sobrepassat = True
     # print(text_resum)
 
 
 def escriureProblema(problem_file, domain_file, num_rovers, num_persones, num_subministres, gasolina_inici, num_peticions_persones, num_peticions_subministres):
     bases = [["al1", "al2", "al3", "al4", "al5"], ["as1", "as2", "as3", "as4", "as5", "as6", "as7", "as8", "as9", "as10"]]
-    f = open(problem_file + ".pddl", "w")
+    f = open("./outputs/" + problem_file + ".pddl", "w")
     f.write("; Aixo es un problema PDDL generat automaticament per un script del Pol, Neus, Pau i Carles\n")
     f.write("(define (problem " + problem_file + ")\n") # Primer parentesi
 

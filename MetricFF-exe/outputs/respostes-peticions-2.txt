@@ -1,0 +1,62 @@
+
+ff: parsing domain file
+domain 'DOMINI_EXT3' defined
+ ... done.
+ff: parsing problem file
+problem 'PROB_EXT3_PUNT_EXTRA_PETICIONS_2' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+advancing to distance:   15
+                         13
+                         12
+                         11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
+step    0: MOVER_ROVER R2 AS8 AS1
+        1: SE_QUEDA P1 AS4
+        2: MOVER_ROVER R1 AS10 AL1
+        3: CARGAR_SUMINISTRO R1 AL1 S1
+        4: MOVER_ROVER R1 AL1 AS4
+        5: MOVER_ROVER R1 AS4 AS3
+        6: DESCARGAR_SUMINISTRO R1 AS3 S1
+        7: CARGAR_PERSONA R1 AS3 P2
+        8: MOVER_ROVER R1 AS3 AS4
+        9: MOVER_ROVER R1 AS4 AL1
+       10: MOVER_ROVER R1 AL1 AS10
+       11: DESCARGAR_PERSONA R1 AS10 P2
+       12: MOVER_ROVER R2 AS1 AS2
+       13: MOVER_ROVER R2 AS2 AL2
+       14: CARGAR_SUMINISTRO R2 AL2 S2
+       15: MOVER_ROVER R2 AL2 AS2
+       16: MOVER_ROVER R2 AS2 AS1
+       17: DESCARGAR_SUMINISTRO R2 AS1 S2
+     
+
+time spent:    0.00 seconds instantiating 256 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 73 facts and 130 actions
+               0.00 seconds creating final representation with 73 relevant facts, 16 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.01 seconds searching, evaluating 1504 states, to a max depth of 0
+               0.01 seconds total time
+

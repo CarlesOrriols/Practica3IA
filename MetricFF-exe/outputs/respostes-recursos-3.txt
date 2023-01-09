@@ -1,0 +1,128 @@
+
+ff: parsing domain file
+domain 'DOMINI_EXT3' defined
+ ... done.
+ff: parsing problem file
+problem 'PROB_EXT3_PUNT_EXTRA_RECURSOS_3' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((1.00*[RF14](MINUS-SUMA-PRIORIDADES)2.00*[RF15](MINUS-SUMA-COMBUSTIBLE-NO-GASTADO)) - () + 0.00)
+
+advancing to distance:   36
+                         32
+                         30
+                         29
+                         28
+                         27
+                         26
+                         25
+                         24
+                         23
+                         22
+                         21
+                         20
+                         19
+                         18
+                         17
+                         16
+                         15
+                         14
+                         13
+                         12
+                         11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
+step    0: MOVER_ROVER R2 AS10 AL1
+        1: MOVER_ROVER R1 AL4 AL2
+        2: MOVER_ROVER R1 AL2 AS2
+        3: CARGAR_SUMINISTRO R2 AL1 S5
+        4: MOVER_ROVER R2 AL1 AS1
+        5: DESCARGAR_SUMINISTRO R2 AS1 S5
+        6: MOVER_ROVER R2 AS1 AL1
+        7: CARGAR_SUMINISTRO R2 AL1 S3
+        8: MOVER_ROVER R2 AL1 AS1
+        9: DESCARGAR_SUMINISTRO R2 AS1 S3
+       10: CARGAR_PERSONA R2 AS1 P2
+       11: MOVER_ROVER R2 AS1 AL1
+       12: MOVER_ROVER R2 AL1 AS4
+       13: DESCARGAR_PERSONA R2 AS4 P2
+       14: MOVER_ROVER R2 AS4 AS3
+       15: MOVER_ROVER R2 AS3 AL2
+       16: MOVER_ROVER R1 AS2 AL2
+       17: CARGAR_SUMINISTRO R1 AL2 S1
+       18: MOVER_ROVER R1 AL2 AS3
+       19: DESCARGAR_SUMINISTRO R1 AS3 S1
+       20: MOVER_ROVER R1 AS3 AL2
+       21: MOVER_ROVER R2 AL2 AS3
+       22: MOVER_ROVER R2 AS3 AS4
+       23: CARGAR_SUMINISTRO R1 AL2 S2
+       24: MOVER_ROVER R1 AL2 AS2
+       25: MOVER_ROVER R2 AS4 AL1
+       26: MOVER_ROVER R1 AS2 AS1
+       27: DESCARGAR_SUMINISTRO R1 AS1 S2
+       28: MOVER_ROVER R1 AS1 AS2
+       29: CARGAR_PERSONA R1 AS2 P3
+       30: MOVER_ROVER R1 AS2 AS1
+       31: DESCARGAR_PERSONA R1 AS1 P3
+       32: MOVER_ROVER R1 AS1 AS2
+       33: CARGAR_PERSONA R1 AS2 P1
+       34: MOVER_ROVER R1 AS2 AL2
+       35: MOVER_ROVER R1 AL2 AL4
+       36: MOVER_ROVER R1 AL4 AS6
+       37: DESCARGAR_PERSONA R1 AS6 P1
+       38: MOVER_ROVER R1 AS6 AS9
+       39: MOVER_ROVER R1 AS9 AL5
+       40: MOVER_ROVER R1 AL5 AS8
+       41: MOVER_ROVER R2 AL1 AS1
+       42: CARGAR_PERSONA R2 AS1 P4
+       43: MOVER_ROVER R2 AS1 AL1
+       44: MOVER_ROVER R2 AL1 AS4
+       45: MOVER_ROVER R2 AS4 AL3
+       46: MOVER_ROVER R1 AS8 AS7
+       47: MOVER_ROVER R2 AL3 AS5
+       48: DESCARGAR_PERSONA R2 AS5 P4
+       49: MOVER_ROVER R2 AS5 AL3
+       50: MOVER_ROVER R2 AL3 AS4
+       51: CARGAR_PERSONA R2 AS4 P5
+       52: MOVER_ROVER R2 AS4 AL1
+       53: MOVER_ROVER R2 AL1 AS1
+       54: MOVER_ROVER R2 AS1 AS2
+       55: DESCARGAR_PERSONA R2 AS2 P5
+       56: MOVER_ROVER R2 AS2 AS1
+       57: MOVER_ROVER R2 AS1 AL1
+       58: MOVER_ROVER R2 AL1 AS4
+       59: MOVER_ROVER R2 AS4 AL3
+       60: CARGAR_SUMINISTRO R2 AL3 S4
+       61: MOVER_ROVER R2 AL3 AS4
+       62: MOVER_ROVER R2 AS4 AS3
+       63: MOVER_ROVER R2 AS3 AL2
+       64: MOVER_ROVER R2 AL2 AS2
+       65: DESCARGAR_SUMINISTRO R2 AS2 S4
+     
+
+time spent:    0.00 seconds instantiating 526 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 100 facts and 136 actions
+               0.00 seconds creating final representation with 100 relevant facts, 16 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               4.66 seconds searching, evaluating 38274 states, to a max depth of 0
+               4.66 seconds total time
+
