@@ -57,32 +57,32 @@ step    0: MOVER_ROVER R01 AS01 AL02
        17: DESCARGAR_PERSONA R02 AS03 P03
        18: MOVER_ROVER R02 AS03 AL04
        19: MOVER_ROVER R01 AL04 AS03
-       20: MOVER_ROVER R02 AL04 AS04
-       21: DESCARGAR_SUMINISTRO R01 AS03 S03
-       22: MOVER_ROVER R02 AS04 AL01
-       23: MOVER_ROVER R02 AL01 AS01
-       24: MOVER_ROVER R02 AS01 AL02
-       25: CARGAR_PERSONA R01 AS03 P01
-       26: CARGAR_PERSONA R01 AS03 P02
-       27: MOVER_ROVER R01 AS03 AL05
-       28: MOVER_ROVER R01 AL05 AS01
-       29: DESCARGAR_PERSONA R01 AS01 P02
-       30: DESCARGAR_PERSONA R01 AS01 P01
-       31: MOVER_ROVER R01 AS01 AL05
-       32: MOVER_ROVER R01 AL05 AS04
-       33: MOVER_ROVER R01 AS04 AL04
-       34: CARGAR_SUMINISTRO R01 AL04 S01
-       35: MOVER_ROVER R01 AL04 AS03
-       36: MOVER_ROVER R01 AS03 AL05
-       37: MOVER_ROVER R01 AL05 AS01
-       38: DESCARGAR_SUMINISTRO R01 AS01 S01
+       20: DESCARGAR_SUMINISTRO R01 AS03 S03
+       21: MOVER_ROVER R01 AS03 AL03
+       22: MOVER_ROVER R01 AL03 AS02
+       23: MOVER_ROVER R01 AS02 AL02
+       24: MOVER_ROVER R02 AL04 AS03
+       25: CARGAR_PERSONA R02 AS03 P01
+       26: CARGAR_PERSONA R02 AS03 P02
+       27: MOVER_ROVER R02 AS03 AL05
+       28: MOVER_ROVER R02 AL05 AS01
+       29: DESCARGAR_PERSONA R02 AS01 P02
+       30: DESCARGAR_PERSONA R02 AS01 P01
+       31: MOVER_ROVER R02 AS01 AL05
+       32: MOVER_ROVER R02 AL05 AS04
+       33: MOVER_ROVER R02 AS04 AL04
+       34: CARGAR_SUMINISTRO R02 AL04 S01
+       35: MOVER_ROVER R02 AL04 AS03
+       36: MOVER_ROVER R02 AS03 AL05
+       37: MOVER_ROVER R02 AL05 AS01
+       38: DESCARGAR_SUMINISTRO R02 AS01 S01
      
 
-time spent:    0.00 seconds instantiating 324 easy, 0 hard action templates
-               0.00 seconds reachability analysis, yielding 94 facts and 92 actions
-               0.00 seconds creating final representation with 94 relevant facts, 16 relevant fluents
+time spent:    0.00 seconds instantiating 174 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 64 facts and 92 actions
+               0.00 seconds creating final representation with 64 relevant facts, 16 relevant fluents
                0.00 seconds computing LNF
                0.00 seconds building connectivity graph
-               0.06 seconds searching, evaluating 3040 states, to a max depth of 0
-               0.06 seconds total time
+               0.07 seconds searching, evaluating 5425 states, to a max depth of 0
+               0.07 seconds total time
 

@@ -2,7 +2,7 @@
 (define (problem prob_ext3_v2)
     (:domain domini_ext3)
         (:objects
-        r01 r02 r03 r04 - rover
+        r01 r02 - rover
         al01 al02 al03 al04 al05 - almacen
         as01 as02 as03 as04 - asentamiento
         p01 p02 p03 - persona
@@ -11,9 +11,9 @@
 
     (:init
 
-        (= (capacidad-combustible) 50)
+        (= (capacidad-combustible) 15)
         (= (suma-prioridades) 100)
-        (= (suma-combustible-no-gastado) 100)
+        (= (suma-combustible-no-gastado) 30)
 
         (= (cantidad-personas r01) 0)
         (= (cantidad-suministros r01) 0)
@@ -23,7 +23,7 @@
         (= (cantidad-suministros r02) 0)
         (= (combustible-gastado r02) 0)
 
-        (estacionado r01 as01) (estacionado r02 as04) (estacionado r03 al01) (estacionado r04 al03)
+        (estacionado r01 as01) (estacionado r02 as04)
 
         ;mapa cuadrícula
         (adyacente al01 as01) (adyacente al01 as04)
